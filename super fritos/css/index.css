@@ -1,0 +1,204 @@
+/* Elimina márgenes y rellenos */
+* {
+    margin: 0;          /* Sin margen */
+    padding: 0;         /* Sin relleno */
+    box-sizing: border-box; 
+}
+
+/* CUERPO */
+body {
+    font-family: Arial, sans-serif; 
+    background: #ffffff;            
+    color: #333;                    
+    line-height: 1.6;               /* Espacio entre líneas del texto */
+}
+
+
+/* ENCABEZADO */
+header {
+    background: #fff5bc;   
+    border: 3px solid #000; 
+    padding: 10px;          /* Espacio interior entre el borde y el contenido */
+    margin: 10px;           /* Espacio exterior entre el header y otros elementos */
+}
+
+.header-content {
+    display: flex;              /* Organiza los hijos en fila (logo e imagen) */
+    align-items: center;        /* Centra verticalmente los elementos */
+    justify-content: center;    /* Centra horizontalmente el contenido */
+    position: relative;         /* Permite usar position: absolute en los hijos */
+}
+
+.header-content img {
+    position: absolute; /* Saca la imagen del flujo normal y la posiciona manualmente */
+    left: 10px;         /* La imagen queda a 10px del borde izquierdo del header */
+}
+
+.header-content h1 {
+    font-size: 2em; /* Tamaño del título: 2 veces el tamaño base de fuente (aprox. 32px) */
+    color: #333;   
+}
+
+
+/* MENÚ DE NAVEGACIÓN */
+nav {
+    background: #fff5bc;   
+    border: 3px solid #000; 
+    margin: 10px;           
+    padding: 10px;          /* Espacio interior */
+}
+
+nav ul {
+    display: flex;              /* Pone los ítems del menú en una fila horizontal */
+    justify-content: space-around; /* Distribuye los ítems con espacio uniforme entre ellos */
+    list-style: none;           /* Quita los puntos (•) de la lista */
+    flex-wrap: wrap;            /* Si no caben en una fila, bajan a la siguiente línea */
+}
+
+nav ul li a {
+    display: block;                 /* El enlace ocupa todo el espacio de su celda */
+    padding: 10px 20px;             /* Espacio interior: 10px arriba/abajo, 20px izquierda/derecha */
+    text-decoration: none;          /* Quita el subrayado de los enlaces */
+    color: #333;                    /* Color gris oscuro para el texto del enlace */
+    font-size: 1.1em;               /* Tamaño ligeramente más grande que el texto normal */
+    border: 2px solid transparent;  /* Borde invisible que se hace visible al hacer hover */
+    transition: all 0.3s;           /* Anima todos los cambios de estilo en 0.3 segundos */
+}
+
+nav ul li a:hover {
+    background: #f0f0f0;    
+    border: 2px solid #333; 
+}
+
+
+/* MAIN-GRID */
+.main-grid {
+    display: grid;                      /* Activa el sistema de grilla CSS */
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales que se reparten el espacio */
+    gap: 10px;                          /* Espacio de 10px entre cada columna y fila */
+    margin: 10px;                       /* Separación con los elementos de arriba y abajo */
+}
+
+.box {
+    border: 3px solid #000; /* Borde negro alrededor de cada box */
+    padding: 15px;          /* Espacio interior entre el borde y el texto */
+    background: white;      /* Fondo blanco para cada box */
+    min-height: 200px;      /* Altura mínima de 200px aunque el contenido sea poco */
+}
+
+.box p {
+    margin: 10px 0;  /* Separación de 10px entre cada párrafo dentro de la caja */
+    font-size: 1.1em; /* Texto ligeramente más grande que el normal */
+}
+
+.image-box {
+    display: flex;              /* Activa flexbox para centrar la imagen */
+    align-items: center;        /* Centra la imagen verticalmente */
+    justify-content: center;    /* Centra la imagen horizontalmente */
+}
+
+.image-box img {
+    max-width: 100%;        /* La imagen no puede ser más ancha que su contenedor */
+    border: 2px solid #333; 
+}
+
+
+/* BODY-SECTION */
+.body-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr 2fr; /* 4 columnas de diferente tamaño proporcional */
+    gap: 10px;              /* Espacio entre columnas */
+    margin: 10px;           /* Separación exterior */
+    border: 3px solid #000; 
+    background: white;      
+    padding: 20px;          
+}
+
+.body-text {
+    display: flex;              /* Flexbox para centrar el texto */
+    align-items: center;        /* Centra verticalmente */
+    justify-content: center;    /* Centra horizontalmente */
+    font-size: 1.5em;           /* Texto grande (1.5 veces el tamaño base) */
+    font-weight: bold;          /* Texto en negrita */
+}
+
+.body-image {
+    display: flex;          /* Flexbox para alinear la imagen */
+    justify-content: center; /* Centra la imagen horizontalmente */
+}
+
+.body-image img {
+    border: 2px solid #333; 
+    max-width: 100%;        /* La imagen no desborda su columna */
+}
+
+.body-content {
+    display: flex;          /* Flexbox para centrar el contenido */
+    align-items: center;    /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    font-size: 1.2em;       /* Texto un poco más grande que el normal */
+    text-align: center;     /* El texto se alinea al centro dentro de su espacio */
+}
+
+
+/* PIE DE PÁGINA */
+footer {
+    background: #fff5bc;   
+    border: 3px solid #000; 
+    margin: 10px;          
+    padding: 15px;         
+}
+
+.footer-content {
+    display: flex;              /* Organiza el contenido del footer en fila */
+    justify-content: space-between; /* Separa los elementos: izquierda, centro y derecha */
+    align-items: center;        /* Alinea verticalmente al centro */
+    flex-wrap: wrap;            /* Si no caben, bajan a la siguiente línea */
+}
+
+.footer-left,
+.footer-right {
+    font-size: 1.1em; /* Tamaño de texto ligeramente mayor para el copyright y el texto del footer */
+}
+
+.footer-social {
+    display: flex;      /* Pone los íconos de redes sociales en fila */
+    gap: 15px;         
+    align-items: center; 
+}
+
+.footer-social img {
+    transition: transform 0.3s; /* Anima el cambio de tamaño al hacer hover en 0.3 segundos */
+}
+
+.footer-social img:hover {
+    transform: scale(1.2); /* Al pasar el cursor, el ícono crece un 20% de su tamaño */
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    .main-grid {
+        grid-template-columns: 1fr; /* En celular: 1 sola columna en vez de 4 */
+    }
+
+    .body-section {
+        grid-template-columns: 1fr; /* En celular: 1 sola columna en vez de 4 desiguales */
+    }
+
+    .footer-content {
+        flex-direction: column; /* El footer apila los elementos verticalmente */
+        gap: 15px;              /* Espacio de 15px entre cada elemento apilado */
+        text-align: center;     /* Todo el texto del footer centrado */
+    }
+
+    nav ul {
+        flex-direction: column; /* El menú se apila verticalmente en celular */
+    }
+
+    nav ul li a {
+        text-align: center;             /* Texto del menú centrado */
+        border-bottom: 1px solid #ddd;  /* Línea gris suave entre cada ítem del menú */
+    }
+}
